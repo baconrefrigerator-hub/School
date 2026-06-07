@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    background-color: #1a1c23;
+    font-family: 'Press Start 2P', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#game-wrapper {
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    border: 6px solid #3b4252;
+    border-radius: 4px;
+}
+
+#hud {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(46, 52, 64, 0.85);
+    padding: 12px;
+    border: 3px solid #4c566a;
+    border-radius: 4px;
+}
+
+.p1-team { border-color: #5e81ac; text-shadow: 2px 2px #2e3440;}
+.p2-team { border-color: #bf616a; text-shadow: 2px 2px #2e3440;}
+.p1-team .team-name { color: #88c0d0; font-size: 14px; }
+.p2-team .team-name { color: #ffa3a3; font-size: 14px; }
+
+.score {
+    font-size: 28px;
+    color: #ffffff;
+    margin-top: 8px;
+}
+
+#game-status {
+    font-size: 20px;
+    color: #ebcb8b;
+    align-self: center;
+    background: rgba(46, 52, 64, 0.85);
+    padding: 10px 16px;
+    border-radius: 4px;
+}
+
+canvas {
+    display: block;
+    background-color: #2e3440;
+    image-rendering: pixelated; /* Forces retro crisp textures */
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 52, 64, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    transition: all 0.3s ease;
+}
+
+#overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#match-banner {
+    font-size: 36px;
+    color: #a3be8c;
+    text-shadow: 4px 4px #2e3440;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#sub-banner {
+    font-size: 16px;
+    color: #e5e9f0;
+}
